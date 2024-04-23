@@ -1,0 +1,10 @@
+%chart-settings {
+  position: absolute;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: 0.3s ease top, 0.3s ease opacity;
+}
