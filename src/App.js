@@ -7,11 +7,16 @@ import Buttons from "./components/Buttons/Buttons";
 import Charts from "./components/Charts/Charts";
 
 function App() {
-  const [labels, setLabels] = useState(['label1', 'label2', 'label3']);
+  const [labels, setLabels] = useState(["label1", "label2", "label3"]);
   const [values, setValues] = useState([100, 200, 300]);
+  
   const data = {
-    labels: labels,
-    data: values,
+    labels: labels.filter(function (item, pos) {
+      return labels.indexOf(item) === pos;
+    }),
+    data: values.filter(function (item, pos) {
+      return values.indexOf(item) === pos;
+    }),
   };
 
   const [radioValue, setRadioValue] = useState("1");
