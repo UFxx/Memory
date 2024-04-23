@@ -1,22 +1,22 @@
 import { Chart, registerables } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 Chart.register(...registerables);
 
-function PieChart() {
+function DoughnutChart(props) {
   return (
-    <Pie
+    <Doughnut
       data={{
-        labels: ["Jun", "Jul", "Aug"],
+        labels: props.data.labels,
         datasets: [
           {
             id: 1,
             label: "",
-            data: [5, 6, 7],
-          }
+            data: props.data.data,
+          },
         ],
       }}
     />
   );
 }
 
-export default PieChart;
+export default DoughnutChart;

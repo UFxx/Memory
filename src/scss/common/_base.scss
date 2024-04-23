@@ -49,6 +49,9 @@ a {
     input + label {
       color: black;
     }
+    input + label::first-letter {
+      text-transform: uppercase;
+    }
   }
   .settings-open-button {
     position: absolute;
@@ -57,8 +60,6 @@ a {
     cursor: pointer;
     width: 20px;
     height: 20px;
-  }
-  .settings-open-button:hover {
     animation: rotate-settings-icon infinite 5s linear;
   }
   @keyframes rotate-settings-icon {

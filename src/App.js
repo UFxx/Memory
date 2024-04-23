@@ -3,49 +3,41 @@ import React, { useState } from "react";
 import OpenSettingsIcon from "./assets/open-settings-icon.png";
 
 import Settings from "./components/Settings/Settings";
-import PieChart from "./components/Pie/Pie";
-import BarChart from "./components/Bar/Bar";
-import DoughnutChart from "./components/Doughnut/Doughnut";
+import Buttons from "./components/Buttons/Buttons";
+import Charts from "./components/Charts/Charts";
 
 function App() {
-  const [pieChecked, setPieChecked] = useState(true);
-  const [barChecked, setBarChecked] = useState(false);
-  const [doughnutChecked, setDoughnutChecked] = useState(false);
+  const [labels, setLabels] = useState(['label1', 'label2', 'label3']);
+  const [values, setValues] = useState([100, 200, 300]);
+  const data = {
+    labels: labels,
+    data: values,
+  };
+
+  const [radioValue, setRadioValue] = useState("1");
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   function changeSettingsOpen() {
     setSettingsOpen(!settingsOpen);
   }
 
-  function clearAllRadio() {
-    setBarChecked(false);
-    setPieChecked(false);
-    setDoughnutChecked(false);
-  }
-
-  function changePieChecked() {
-    clearAllRadio();
-    setPieChecked(!pieChecked);
-  }
-
-  function changeBarChecked() {
-    clearAllRadio();
-    setBarChecked(!barChecked);
-  }
-
-  function changeDoughnutChecked() {
-    clearAllRadio();
-    setDoughnutChecked(!doughnutChecked);
+  function changeValue(e) {
+    setRadioValue(e.target.value);
   }
 
   return (
     <div className="content">
       <div className="chart-container">
-        {barChecked ? <BarChart /> : null}
-        {pieChecked ? <PieChart /> : null}
-        {doughnutChecked ? <DoughnutChart /> : null}
+        {/* ValueState - which radio button is clicked */}
+        <Charts valueState={radioValue} data={data} />
       </div>
-      <Settings open={settingsOpen} changeSettingsOpen={changeSettingsOpen} />
+      <Settings
+        open={settingsOpen}
+        changeSettingsOpen={changeSettingsOpen}
+        data={data}
+        setLabels={setLabels}
+        setValues={setValues}
+      />
       <img
         src={OpenSettingsIcon}
         alt="open settings icon"
@@ -53,30 +45,7 @@ function App() {
         onClick={changeSettingsOpen}
       />
       <div className="choose-chart-type">
-        <input
-          type="radio"
-          name="chart-type"
-          id="radio-pie"
-          checked={pieChecked}
-          onChange={changePieChecked}
-        />
-        <label htmlFor="radio-pie">Pie</label>
-        <input
-          type="radio"
-          name="chart-type"
-          id="radio-bar"
-          checked={barChecked}
-          onChange={changeBarChecked}
-        />
-        <label htmlFor="radio-bar">Bar</label>
-        <input
-          type="radio"
-          name="chart-type"
-          id="radio-doughnut"
-          checked={doughnutChecked}
-          onChange={changeDoughnutChecked}
-        />
-        <label htmlFor="radio-doughnut">Doughnut</label>
+        <Buttons changeValue={changeValue} valueState={radioValue} />
       </div>
     </div>
   );
