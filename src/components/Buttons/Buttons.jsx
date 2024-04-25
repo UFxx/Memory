@@ -22,6 +22,36 @@ function Buttons(props) {
         name="doughnut"
         value="3"
       />
+      <RadioButton
+        changeValue={props.changeValue}
+        valueState={props.valueState}
+        name="line"
+        value="4"
+      />
+      <RadioButton
+        changeValue={props.changeValue}
+        valueState={props.valueState}
+        name="bubble"
+        value="5"
+      />
+      <RadioButton
+        changeValue={props.changeValue}
+        valueState={props.valueState}
+        name="polararea"
+        value="6"
+      />
+      <RadioButton
+        changeValue={props.changeValue}
+        valueState={props.valueState}
+        name="radar"
+        value="7"
+      />
+      <RadioButton
+        changeValue={props.changeValue}
+        valueState={props.valueState}
+        name="scatter"
+        value="8"
+      />
     </>
   );
 }

@@ -1,8 +1,8 @@
-import { Doughnut } from "react-chartjs-2";
+import { Bubble } from "react-chartjs-2";
 
-function DoughnutChart(props) {
+function BubbleChart(props) {
   return (
-    <Doughnut
+    <Bubble
       data={{
         labels: props.data.labels,
         datasets: [
@@ -17,4 +17,4 @@ function DoughnutChart(props) {
   );
 }
 
-export default DoughnutChart;
+export default BubbleChart;

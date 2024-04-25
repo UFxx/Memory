@@ -1,8 +1,8 @@
-import { Doughnut } from "react-chartjs-2";
+import { Radar } from "react-chartjs-2";
 
-function DoughnutChart(props) {
+function RadarChart(props) {
   return (
-    <Doughnut
+    <Radar
       data={{
         labels: props.data.labels,
         datasets: [
@@ -17,4 +17,4 @@ function DoughnutChart(props) {
   );
 }
 
-export default DoughnutChart;
+export default RadarChart;
