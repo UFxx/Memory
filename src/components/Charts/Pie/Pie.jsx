@@ -1,6 +1,4 @@
-import { Chart, registerables } from "chart.js";
 import { Pie } from "react-chartjs-2";
-Chart.register(...registerables);
 
 function PieChart(props) {
   return (

@@ -1,8 +1,10 @@
-import { Doughnut } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
+import { Line } from "react-chartjs-2";
+Chart.register(...registerables);
 
-function DoughnutChart(props) {
+function LineChart(props) {
   return (
-    <Doughnut
+    <Line
       data={{
         labels: props.data.labels,
         datasets: [
@@ -17,4 +19,4 @@ function DoughnutChart(props) {
   );
 }
 
-export default DoughnutChart;
+export default LineChart;

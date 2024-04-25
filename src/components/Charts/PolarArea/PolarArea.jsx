@@ -1,8 +1,8 @@
-import { Doughnut } from "react-chartjs-2";
+import { PolarArea } from "react-chartjs-2";
 
-function DoughnutChart(props) {
+function PolarAreaChart(props) {
   return (
-    <Doughnut
+    <PolarArea
       data={{
         labels: props.data.labels,
         datasets: [
@@ -17,4 +17,4 @@ function DoughnutChart(props) {
   );
 }
 
-export default DoughnutChart;
+export default PolarAreaChart;
