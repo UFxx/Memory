@@ -5,11 +5,12 @@ import OpenSettingsIcon from "./assets/open-settings-icon.png";
 import Settings from "./components/Settings/Settings";
 import Buttons from "./components/Buttons/Buttons";
 import Charts from "./components/Charts/Charts";
+import Donwload from "./components/Donwload/Donwload";
 
 function App() {
   const [labels, setLabels] = useState(["label1", "label2", "label3"]);
   const [values, setValues] = useState([100, 200, 300]);
-  
+
   const data = {
     labels: labels.filter(function (item, pos) {
       return labels.indexOf(item) === pos;
@@ -49,6 +50,7 @@ function App() {
         className="settings-open-button"
         onClick={changeSettingsOpen}
       />
+      <Donwload />
       <div className="choose-chart-type">
         <Buttons changeValue={changeValue} valueState={radioValue} />
       </div>
