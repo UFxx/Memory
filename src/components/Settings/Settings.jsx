@@ -1,6 +1,6 @@
 import React from "react";
 
-import CloseSettingsIcon from "../../assets/close-settings-icon.webp";
+import CloseSettingsIcon from "../../assets/close-settings-icon.png";
 
 import LabelsForm from "./LabelsForm/LabelsForm";
 import ValuesForm from "./ValuesForm/ValuesForm";

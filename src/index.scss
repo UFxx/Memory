@@ -1,4 +1,9 @@
 // COMMON
 @import "./scss/common/base";
-@import "./scss/common/variables";
 @import "./scss/common/extends";
+@import "./scss/common/media";
+
+// COMPONENTS
+@import './scss/components/Settings';
+@import './scss/components/Buttons';
+@import './scss/components/Donwload';
