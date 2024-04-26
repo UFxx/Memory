@@ -7,7 +7,7 @@ function RadioButton(props) {
         id={`radio-${props.name}`}
         value={props.value}
         checked={props.valueState === props.value ? true : false}
-        onChange={props.changeValue}
+        onChange={props.changeRadioValue}
       />
       <label htmlFor={`radio-${props.name}`}>{props.name}</label>
     </>

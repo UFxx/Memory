@@ -1,0 +1,20 @@
+.theme-changer {
+  position: absolute;
+  background-color: gray;
+  width: 50px;
+  height: 25px;
+  border-radius: 30px;
+  right: 30px;
+  top: 30px;
+  padding: 5px;
+  cursor: pointer;
+  .theme-dark {
+    @extend %theme-switcher;
+    left: 5px;
+  }
+  .theme-light {
+    @extend %theme-switcher;
+    left: 30px;
+    background-color: white;
+  }
+}

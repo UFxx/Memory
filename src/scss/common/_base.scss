@@ -6,37 +6,36 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100svh;
+.container-dark {
+  @extend %container;
   background-color: black;
+}
+
+.container-light {
+  @extend %container;
+  background-color: white;
 }
 
 a {
   text-decoration: none;
 }
 
-.content {
-  position: relative;
-  width: 700px;
-  height: 400px;
+.content-dark {
+  @extend %content;
   background-color: black;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  padding: 30px;
-  overflow: hidden;
-  .chart-container {
+  .chart-container-dark {
+    @extend %chart-container;
     background-color: #171717;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  }
+}
+
+.content-light {
+  @extend %content;
+  background-color: #9e9e9e;
+  box-shadow: 0 0 10px 2px rgba(40, 40, 40, 0.3);
+  .chart-container-light {
+    @extend %chart-container;
+    background-color: white;
   }
 }

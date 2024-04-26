@@ -5,49 +5,49 @@ function Buttons(props) {
     <>
       {/* The name of the chart must begin with a small letter (name i mean chart type) */}
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="pie"
         value="1"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="bar"
         value="2"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="doughnut"
         value="3"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="line"
         value="4"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="bubble"
         value="5"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="polararea"
         value="6"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="radar"
         value="7"
       />
       <RadioButton
-        changeValue={props.changeValue}
+        changeRadioValue={props.changeRadioValue}
         valueState={props.valueState}
         name="scatter"
         value="8"
