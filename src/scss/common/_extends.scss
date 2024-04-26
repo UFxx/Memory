@@ -52,3 +52,16 @@
   width: 100svw;
   transition: 0.3s ease background-color;
 }
+
+%attention {
+  font-size: 20px;
+  text-align: center;
+  z-index: -1;
+  padding: 20px;
+  background-color: #aaaaaa10;
+  border-radius: 20px;
+  transition: 0.3s ease height, 0.3s ease padding;
+  p {
+    width: 150px;
+  }
+}

@@ -1,0 +1,27 @@
+.attention {
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  overflow: hidden;
+  img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .attention-content__hidden {
+    @extend %attention;
+    height: 0;
+    padding: 0;
+  }
+  .attention-content__visible {
+    @extend %attention;
+    height: 260px;
+    padding: 20px;
+  }
+  .attention-content__dark {
+    color: white;
+  }
+  .attention-content__light {
+    color: black;
+  }
+}

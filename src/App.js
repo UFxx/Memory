@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 
 import OpenSettingsIconDark from "./assets/open-settings-icon-dark-theme.png";
 import OpenSettingsIconLight from "./assets/open-settings-icon-light-theme.png";
@@ -8,6 +8,8 @@ import Buttons from "./components/Buttons/Buttons";
 import Charts from "./components/Charts/Charts";
 import Donwload from "./components/Donwload/Donwload";
 import ThemeChanger from "./components/ThemeChanger/ThemeChanger";
+
+export const Theme = createContext("without provider");
 
 function App() {
   const [theme, setTheme] = useState(true);
@@ -41,7 +43,9 @@ function App() {
       <div className={`content-${theme ? "dark" : "light"}`}>
         <div className={`chart-container-${theme ? "dark" : "light"}`}>
           {/* ValueState - which radio button is clicked */}
-          <Charts valueState={radioValue} data={data} />
+          <Theme.Provider value={theme}>
+            <Charts valueState={radioValue} data={data} />
+          </Theme.Provider>
         </div>
         <Settings
           open={settingsOpen}
