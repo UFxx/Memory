@@ -1,0 +1,15 @@
+.choose-chart-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  input {
+    margin-left: 20px;
+  }
+  input + label {
+    color: white;
+  }
+  input + label::first-letter {
+    text-transform: uppercase;
+  }
+}
