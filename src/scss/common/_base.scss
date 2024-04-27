@@ -6,6 +6,10 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
+body {
+  overflow: hidden
+}
+
 .container-dark {
   @extend %container;
   background-color: black;

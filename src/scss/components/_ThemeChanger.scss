@@ -11,6 +11,7 @@
   .theme-dark {
     @extend %theme-switcher;
     left: 5px;
+    background-color: black
   }
   .theme-light {
     @extend %theme-switcher;

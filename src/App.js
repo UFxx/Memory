@@ -38,47 +38,50 @@ function App() {
   }
 
   return (
-    <div className={`container-${theme ? "dark" : "light"}`}>
-      <ThemeChanger setTheme={setTheme} theme={theme} />
-      <div className={`content-${theme ? "dark" : "light"}`}>
-        <div className={`chart-container-${theme ? "dark" : "light"}`}>
-          {/* ValueState - which radio button is clicked */}
-          <Theme.Provider value={theme}>
-            <Charts valueState={radioValue} data={data} />
-          </Theme.Provider>
-        </div>
-        <Settings
-          open={settingsOpen}
-          changeSettingsOpen={changeSettingsOpen}
-          data={data}
-          setLabels={setLabels}
-          setValues={setValues}
-          theme={theme}
-        />
-        {theme ? (
-          <img
-            src={OpenSettingsIconDark}
-            alt="open settings icon"
-            className="settings-open-button"
-            onClick={changeSettingsOpen}
-          />
-        ) : (
-          <img
-            src={OpenSettingsIconLight}
-            alt="open settings icon"
-            className="settings-open-button"
-            onClick={changeSettingsOpen}
-          />
-        )}
-        <Donwload theme={theme} />
-        <div className="choose-chart-type">
-          <Buttons
-            changeRadioValue={changeRadioValue}
-            valueState={radioValue}
-          />
+    <>
+      <div className={`container-${theme ? "dark" : "light"}`}>
+        <ThemeChanger setTheme={setTheme} theme={theme} />
+        <div className={`content-${theme ? "dark" : "light"}`}>
+          <div className={`chart-container-${theme ? "dark" : "light"}`}>
+            {/* ValueState - which radio button is clicked */}
+            <Theme.Provider value={theme}>
+              <Charts valueState={radioValue} data={data} />
+            </Theme.Provider>
+          </div>
+
+          {theme ? (
+            <img
+              src={OpenSettingsIconDark}
+              alt="open settings icon"
+              className="settings-open-button"
+              onClick={changeSettingsOpen}
+            />
+          ) : (
+            <img
+              src={OpenSettingsIconLight}
+              alt="open settings icon"
+              className="settings-open-button"
+              onClick={changeSettingsOpen}
+            />
+          )}
+          <Donwload theme={theme} />
+          <div className="choose-chart-type">
+            <Buttons
+              changeRadioValue={changeRadioValue}
+              valueState={radioValue}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <Settings
+        open={settingsOpen}
+        changeSettingsOpen={changeSettingsOpen}
+        data={data}
+        setLabels={setLabels}
+        setValues={setValues}
+        theme={theme}
+      />
+    </>
   );
 }
 

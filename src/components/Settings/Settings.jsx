@@ -3,10 +3,22 @@ import React from "react";
 import CloseSettingsIconDark from "../../assets/close-settings-icon-dark-theme.png";
 import CloseSettingsIconLight from "../../assets/close-settings-icon-light-theme.png";
 
-import LabelsForm from "./LabelsForm/LabelsForm";
-import ValuesForm from "./ValuesForm/ValuesForm";
+import Dataset from "./Dataset/Dataset";
 
 function Settings(props) {
+  const datasets = [
+    <Dataset id="1" setLabels={props.setLabels} setValues={props.setValues} />,
+  ];
+
+  function addDataset() {
+    datasets.push(
+      <Dataset
+        id={datasets.length + 1}
+        setLabels={props.setLabels}
+        setValues={props.setValues}
+      />
+    );
+  }
   return (
     <div className={`chart-settings__${props.open ? "open" : "hidden"}`}>
       <div className="settings-content">
@@ -25,8 +37,10 @@ function Settings(props) {
             onClick={props.changeSettingsOpen}
           />
         )}
-        <LabelsForm setLabels={props.setLabels} />
-        <ValuesForm setValues={props.setValues} />
+        {datasets}
+        <button className="add-dataset-button" onClick={addDataset}>
+          +
+        </button>
       </div>
     </div>
   );
