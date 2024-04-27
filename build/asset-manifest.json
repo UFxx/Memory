@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.45ccd44f.css",
-    "main.js": "/static/js/main.91ce37ff.js",
-    "static/media/open-settings-icon.png": "/static/media/open-settings-icon.c469b9df96ce4832b3ab.png",
-    "static/media/close-settings-icon.webp": "/static/media/close-settings-icon.8382398629531b88cec5.webp",
+    "main.css": "/static/css/main.1cf56026.css",
+    "main.js": "/static/js/main.41f47f49.js",
+    "static/media/open-settings-icon-light-theme.png": "/static/media/open-settings-icon-light-theme.b6a1cef8268e0b643d27.png",
+    "static/media/close-settings-icon-light-theme.png": "/static/media/close-settings-icon-light-theme.6d5bd841f6560f8b9d67.png",
+    "static/media/open-settings-icon-dark-theme.png": "/static/media/open-settings-icon-dark-theme.126e71b754344ab95722.png",
+    "static/media/attention-icon.png": "/static/media/attention-icon.72af1f69257e882624e7.png",
+    "static/media/close-settings-icon-dark-theme.png": "/static/media/close-settings-icon-dark-theme.08df408c63a17fb86719.png",
     "index.html": "/index.html",
-    "main.45ccd44f.css.map": "/static/css/main.45ccd44f.css.map",
-    "main.91ce37ff.js.map": "/static/js/main.91ce37ff.js.map"
+    "main.1cf56026.css.map": "/static/css/main.1cf56026.css.map",
+    "main.41f47f49.js.map": "/static/js/main.41f47f49.js.map"
   },
   "entrypoints": [
-    "static/css/main.45ccd44f.css",
-    "static/js/main.91ce37ff.js"
+    "static/css/main.1cf56026.css",
+    "static/js/main.41f47f49.js"
   ]
 }
