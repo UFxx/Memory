@@ -21,9 +21,15 @@ function App() {
     labels: labels.filter(function (item, pos) {
       return labels.indexOf(item) === pos;
     }),
-    data: values.filter(function (item, pos) {
-      return values.indexOf(item) === pos;
-    }),
+    datasets: [
+      {
+        id: 1,
+        label: "",
+        data: values.filter(function (item, pos) {
+          return values.indexOf(item) === pos;
+        }),
+      },
+    ],
   };
 
   const [radioValue, setRadioValue] = useState("1");

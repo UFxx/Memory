@@ -4,18 +4,7 @@ import Attention from "../Attention/Attention";
 function BubbleChart(props) {
   return (
     <>
-      <Bubble
-        data={{
-          labels: props.data.labels,
-          datasets: [
-            {
-              id: 1,
-              label: "",
-              data: props.data.data,
-            },
-          ],
-        }}
-      />
+      <Bubble data={props.data} />
       <Attention />
     </>
   );
