@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import CloseSettingsIconDark from "../../assets/close-settings-icon-dark-theme.png";
 import CloseSettingsIconLight from "../../assets/close-settings-icon-light-theme.png";
@@ -6,18 +6,23 @@ import CloseSettingsIconLight from "../../assets/close-settings-icon-light-theme
 import Dataset from "./Dataset/Dataset";
 
 function Settings(props) {
-  const datasets = [
+  const [datasets, setDatasets] = useState([
     <Dataset id="1" setLabels={props.setLabels} setValues={props.setValues} />,
-  ];
+  ]);
 
   function addDataset() {
-    datasets.push(
+    // Create copy of datasets (state)
+    let dataset = Object.assign([], datasets);
+    // Push new dataset to copy of datasets
+    dataset.push(
       <Dataset
-        id={datasets.length + 1}
+        id={dataset.length + 1}
         setLabels={props.setLabels}
         setValues={props.setValues}
       />
     );
+    // Update datasets (state)
+    setDatasets(dataset);
   }
   return (
     <div className={`chart-settings__${props.open ? "open" : "hidden"}`}>
