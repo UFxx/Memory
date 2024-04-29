@@ -7,7 +7,13 @@ import Dataset from "./Dataset/Dataset";
 
 function Settings(props) {
   const [datasets, setDatasets] = useState([
-    <Dataset id="1" setLabels={props.setLabels} setValues={props.setValues} />,
+    <Dataset
+      id={-1}
+      setLabels={props.setLabels}
+      setValues={props.setValues}
+      values={props.values}
+      name = 'Заголовки'
+    />,
   ]);
 
   function addDataset() {
@@ -16,9 +22,10 @@ function Settings(props) {
     // Push new dataset to copy of datasets
     dataset.push(
       <Dataset
-        id={dataset.length + 1}
+        id={dataset.length}
         setLabels={props.setLabels}
         setValues={props.setValues}
+        values={props.values}
       />
     );
     // Update datasets (state)

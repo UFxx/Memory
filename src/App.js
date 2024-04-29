@@ -15,21 +15,18 @@ function App() {
   const [theme, setTheme] = useState(true);
 
   const [labels, setLabels] = useState(["label1", "label2", "label3"]);
-  const [values, setValues] = useState([100, 200, 300]);
+  const [values, setValues] = useState([
+    { id: 1, label: "Заголовки", data: [] },
+    { id: 2, label: "", data: [] },
+    { id: 3, label: "", data: [] },
+    { id: 4, label: "", data: [] },
+  ]);
 
   const data = {
     labels: labels.filter(function (item, pos) {
       return labels.indexOf(item) === pos;
     }),
-    datasets: [
-      {
-        id: 1,
-        label: "",
-        data: values.filter(function (item, pos) {
-          return values.indexOf(item) === pos;
-        }),
-      },
-    ],
+    datasets: [values[1], values[2], values[3]],
   };
 
   const [radioValue, setRadioValue] = useState("1");
@@ -85,6 +82,7 @@ function App() {
         data={data}
         setLabels={setLabels}
         setValues={setValues}
+        values={values}
         theme={theme}
       />
     </>

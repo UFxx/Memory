@@ -10,10 +10,17 @@ function Dataset(props) {
             className="dataset-title"
             type="text"
             id=""
+            value={props.id === -1 ? "Заголовки" : null}
             placeholder={`Набор ${props.id}`}
           />
-          <LabelsForm setLabels={props.setLabels} />
-          <ValuesForm setValues={props.setValues} />
+          {props.id === -1 ? <LabelsForm setLabels={props.setLabels} /> : null}
+          {props.id === -1 ? null : (
+            <ValuesForm
+              setValues={props.setValues}
+              values={props.values}
+              id={props.id}
+            />
+          )}
         </div>
       </div>
     </>
