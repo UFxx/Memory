@@ -13,7 +13,9 @@ function ValuesForm(props) {
   });
 
   const onSubmit = (data) => {
-    props.setValues(Object.values(data));
+    let valuesCopy = Object.assign(props.values);
+    valuesCopy[props.id].data = Object.values(data);
+    props.setValues(valuesCopy);
   };
 
   return (
