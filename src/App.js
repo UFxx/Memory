@@ -12,14 +12,29 @@ import ThemeChanger from "./components/ThemeChanger/ThemeChanger";
 export const Theme = createContext("without provider");
 
 function App() {
+  const colors = [
+    "#C7C9CD",
+    "#FFCD56",
+    "#9966FF",
+    "#FF9F40",
+    "#4BC0C0",
+    "#FF6384",
+    "#FF6384",
+  ];
+
+  function getRandomColor() {
+    let randomNum = Math.round(Math.random() * colors.length - 1);
+    return colors[randomNum];
+  }
+
   const [theme, setTheme] = useState(true);
 
   const [labels, setLabels] = useState(["label1", "label2", "label3"]);
   const [values, setValues] = useState([
     { id: 1, label: "Заголовки", data: [] },
-    { id: 2, label: "", data: [] },
-    { id: 3, label: "", data: [] },
-    { id: 4, label: "", data: [] },
+    { id: 2, label: "", data: [], backgroundColor: getRandomColor() },
+    { id: 3, label: "", data: [], backgroundColor: getRandomColor() },
+    { id: 4, label: "", data: [], backgroundColor: getRandomColor() },
   ]);
 
   const data = {
