@@ -12,7 +12,7 @@ function Settings(props) {
       setLabels={props.setLabels}
       setValues={props.setValues}
       values={props.values}
-      name = 'Заголовки'
+      name="Заголовки"
     />,
   ]);
 
@@ -50,9 +50,11 @@ function Settings(props) {
           />
         )}
         {datasets}
-        <button className="add-dataset-button" onClick={addDataset}>
-          +
-        </button>
+        {datasets.length < 4 && (
+          <button className="add-dataset-button" onClick={addDataset}>
+            +
+          </button>
+        )}
       </div>
     </div>
   );
