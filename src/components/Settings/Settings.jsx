@@ -8,33 +8,28 @@ import Dataset from "./Dataset/Dataset";
 export const DatasetsState = createContext("without provider");
 
 function Settings(props) {
-  const [datasets, setDatasets] = useState([
-    <Dataset
-      id={-1}
-      setLabels={props.setLabels}
-      key={0}
-      name="Заголовки"
-    />,
+  const [settingsDatasets, setSettingsDatasets] = useState([
+    
+    <Dataset id={-1} setLabels={props.setLabels} key={0} name="Заголовки" />,
   ]);
 
   function addDataset() {
-    let dataset = Object.assign([], datasets);
-    dataset.push(
+    let settingsDatasetsCopy = Object.assign([], settingsDatasets);
+    settingsDatasetsCopy.push(
       <Dataset
-        id={dataset.length}
-        values={props.values}
-        setValues={props.setValues}
-        key={dataset.length}
-        datasets={datasets}
-        setDatasets={setDatasets}
+        id={settingsDatasetsCopy.length}
+        datasets={props.datasets}
+        setDatasets={props.setDatasets}
+        key={settingsDatasetsCopy.length}
+        settingsDatasets={settingsDatasets}
+        setSettingsDatasets={setSettingsDatasets}
       />
     );
-    setDatasets(dataset);
+    setSettingsDatasets(settingsDatasetsCopy);
 
-    let valuesCopy = Object.assign([], props.values);
-    valuesCopy.push({ id: datasets.length, label: "", data: [] });
-    props.setValues(valuesCopy);
-    console.log(valuesCopy)
+    let valuesCopy = Object.assign([], props.datasets);
+    valuesCopy.push({ id: settingsDatasets.length, label: "", data: [] });
+    props.setDatasets(valuesCopy);
   }
   return (
     <div className={`chart-settings__${props.open ? "open" : "hidden"}`}>
@@ -55,14 +50,14 @@ function Settings(props) {
           />
         )}
         <div className="datasets">
-          <DatasetsState.Provider value={datasets}>{datasets}</DatasetsState.Provider>
+          <DatasetsState.Provider value={settingsDatasets}>
+            {settingsDatasets}
+          </DatasetsState.Provider>
         </div>
 
-        {datasets.length < 4 && (
-          <button className="add-dataset-button" onClick={addDataset}>
-            +
-          </button>
-        )}
+        <button className="add-dataset-button" onClick={addDataset}>
+          +
+        </button>
       </div>
     </div>
   );

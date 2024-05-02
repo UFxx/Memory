@@ -4,14 +4,20 @@ import ValuesForm from "../ValuesForm/ValuesForm";
 import DeleteIcon from "../../../assets/delete-icon.png";
 import { useContext } from "react";
 import { DatasetsState } from "../Settings";
+import { ValuesState } from "../../../App";
 
 function Dataset(props) {
-  let Datasets = useContext(DatasetsState);
+  const Datasets = useContext(DatasetsState);
+  const Values = useContext(ValuesState);
 
   function deleteDataset() {
     let datasetsCopy = Object.assign([], Datasets);
-    datasetsCopy[props.id] = null;
-    props.setDatasets(datasetsCopy);
+    datasetsCopy.splice(props.id, 1);
+    props.setSettingsDatasets(datasetsCopy);
+
+    let valuesCopy = Object.assign([], Values);
+    valuesCopy[props.id - 1].data = null;
+    props.setDatasets(valuesCopy);
   }
 
   return (
@@ -27,8 +33,8 @@ function Dataset(props) {
         {props.id !== -1 && (
           <>
             <ValuesForm
-              setValues={props.setValues}
-              values={props.values}
+              setDatasets={props.setDatasets}
+              datasets={props.datasets}
               id={props.id}
             />
             <img

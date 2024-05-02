@@ -13,30 +13,15 @@ export const Theme = createContext("without provider");
 export const ValuesState = createContext("without provider");
 
 function App() {
-  // const colors = [
-  //   "#C7C9CD",
-  //   "#FFCD56",
-  //   "#9966FF",
-  //   "#FF9F40",
-  //   "#4BC0C0",
-  //   "#FF6384",
-  //   "#FF6384",
-  // ];
-
-  // function getRandomColor() {
-  //   let randomNum = Math.round(Math.random() * colors.length - 1);
-  //   return colors[randomNum];
-  // }
-
   const [theme, setTheme] = useState(true);
   const [labels, setLabels] = useState(["label1", "label2", "label3"]);
-  const [values, setValues] = useState([]);
+  const [datasets, setDatasets] = useState([]);
 
   const data = {
     labels: labels.filter(function (item, pos) {
       return labels.indexOf(item) === pos;
     }),
-    datasets: values,
+    datasets: datasets,
   };
 
   const [radioValue, setRadioValue] = useState("1");
@@ -58,7 +43,7 @@ function App() {
           <div className={`chart-container-${theme ? "dark" : "light"}`}>
             {/* ValueState - which radio button is clicked */}
             <Theme.Provider value={theme}>
-              <Charts valueState={radioValue} data={data} />
+              <Charts radioValue={radioValue} data={data} datasets={datasets} />
             </Theme.Provider>
           </div>
 
@@ -86,14 +71,14 @@ function App() {
           </div>
         </div>
       </div>
-      <ValuesState.Provider value={values}>
+      <ValuesState.Provider value={datasets}>
         <Settings
           open={settingsOpen}
           changeSettingsOpen={changeSettingsOpen}
           data={data}
           setLabels={setLabels}
-          setValues={setValues}
-          values={values}
+          setDatasets={setDatasets}
+          datasets={datasets}
           theme={theme}
         />
       </ValuesState.Provider>
