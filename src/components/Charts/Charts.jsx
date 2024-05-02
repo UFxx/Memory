@@ -10,14 +10,14 @@ import ScatterChart from "./Scatter/Scatter";
 function Charts(props) {
   return (
     <>
-      {props.valueState === "1" ? <PieChart data={props.data} /> : null}
-      {props.valueState === "2" ? <BarChart data={props.data} /> : null}
-      {props.valueState === "3" ? <DoughnutChart data={props.data} /> : null}
-      {props.valueState === "4" ? <LineChart data={props.data} /> : null}
-      {props.valueState === "5" ? <BubbleChart data={props.data} /> : null}
-      {props.valueState === "6" ? <PolarAreaChart data={props.data} /> : null}
-      {props.valueState === "7" ? <RadarChart data={props.data} /> : null}
-      {props.valueState === "8" ? <ScatterChart data={props.data} /> : null}
+      {props.radioValue === "1" ? <PieChart data={props.data} /> : null}
+      {props.radioValue === "2" ? <BarChart data={props.data} /> : null}
+      {props.radioValue === "3" ? <DoughnutChart data={props.data} /> : null}
+      {props.radioValue === "4" ? <LineChart data={props.data} /> : null}
+      {props.radioValue === "5" ? <BubbleChart data={props.data} /> : null}
+      {props.radioValue === "6" ? <PolarAreaChart data={props.data} /> : null}
+      {props.radioValue === "7" ? <RadarChart data={props.data} /> : null}
+      {props.radioValue === "8" ? <ScatterChart data={props.data} /> : null}
     </>
   );
 }

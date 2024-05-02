@@ -18,9 +18,9 @@ function ValuesForm(props) {
   });
 
   const onSubmit = (data) => {
-    let valuesCopy = Object.assign(Values);
+    let valuesCopy = Object.assign([], Values);
     valuesCopy[props.id - 1].data = Object.values(data);
-    props.setValues(valuesCopy);
+    props.setDatasets(valuesCopy);
   };
 
   return (
