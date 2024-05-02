@@ -23,6 +23,20 @@
     .dataset-title::placeholder {
       color: white;
     }
+    .delete-dataset-icon {
+      position: absolute;
+      width: 20px;
+      left: 96%;
+      top: -45px;
+      padding: 10px;
+      box-sizing: content-box;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease background-color;
+    }
+    .delete-dataset-icon:hover {
+      background-color: #aaaaaa20;
+    }
   }
   .columns-inputs,
   .values-inputs {
@@ -116,6 +130,6 @@
 }
 
 .add-dataset-button:hover {
-  color: rgb(182, 182, 182);  
+  color: rgb(182, 182, 182);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.249);
 }

@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 
+import { ValuesState } from "../../../App";
+
 function ValuesForm(props) {
+  const Values = useContext(ValuesState);
+
   const { register, handleSubmit } = useForm({
     defaultValues: {
       value1: "",
@@ -13,8 +18,8 @@ function ValuesForm(props) {
   });
 
   const onSubmit = (data) => {
-    let valuesCopy = Object.assign(props.values);
-    valuesCopy[props.id].data = Object.values(data);
+    let valuesCopy = Object.assign(Values);
+    valuesCopy[props.id - 1].data = Object.values(data);
     props.setValues(valuesCopy);
   };
 
