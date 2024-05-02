@@ -1,35 +1,40 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 
 import CloseSettingsIconDark from "../../assets/close-settings-icon-dark-theme.png";
 import CloseSettingsIconLight from "../../assets/close-settings-icon-light-theme.png";
 
 import Dataset from "./Dataset/Dataset";
 
+export const DatasetsState = createContext("without provider");
+
 function Settings(props) {
   const [datasets, setDatasets] = useState([
     <Dataset
       id={-1}
       setLabels={props.setLabels}
-      setValues={props.setValues}
-      values={props.values}
+      key={0}
       name="Заголовки"
     />,
   ]);
 
   function addDataset() {
-    // Create copy of datasets (state)
     let dataset = Object.assign([], datasets);
-    // Push new dataset to copy of datasets
     dataset.push(
       <Dataset
         id={dataset.length}
-        setLabels={props.setLabels}
-        setValues={props.setValues}
         values={props.values}
+        setValues={props.setValues}
+        key={dataset.length}
+        datasets={datasets}
+        setDatasets={setDatasets}
       />
     );
-    // Update datasets (state)
     setDatasets(dataset);
+
+    let valuesCopy = Object.assign([], props.values);
+    valuesCopy.push({ id: datasets.length, label: "", data: [] });
+    props.setValues(valuesCopy);
+    console.log(valuesCopy)
   }
   return (
     <div className={`chart-settings__${props.open ? "open" : "hidden"}`}>
@@ -49,7 +54,10 @@ function Settings(props) {
             onClick={props.changeSettingsOpen}
           />
         )}
-        {datasets}
+        <div className="datasets">
+          <DatasetsState.Provider value={datasets}>{datasets}</DatasetsState.Provider>
+        </div>
+
         {datasets.length < 4 && (
           <button className="add-dataset-button" onClick={addDataset}>
             +

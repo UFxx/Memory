@@ -15,6 +15,7 @@ function LabelsForm(props) {
   const onSubmit = (data) => {
     props.setLabels(Object.values(data));
   };
+  
   return (
     <form className="columns-inputs" onChange={handleSubmit(onSubmit)}>
       <input
