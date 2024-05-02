@@ -16,7 +16,7 @@ function Dataset(props) {
     props.setSettingsDatasets(datasetsCopy);
 
     let valuesCopy = Object.assign([], Values);
-    valuesCopy[props.id - 1].data = null;
+    valuesCopy.splice(props.id - 1, 1);
     props.setDatasets(valuesCopy);
   }
 

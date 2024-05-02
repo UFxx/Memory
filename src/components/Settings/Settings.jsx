@@ -9,9 +9,18 @@ export const DatasetsState = createContext("without provider");
 
 function Settings(props) {
   const [settingsDatasets, setSettingsDatasets] = useState([
-    
     <Dataset id={-1} setLabels={props.setLabels} key={0} name="Заголовки" />,
   ]);
+
+  const colors = [
+    "#36A2EB",
+    "#FF6384",
+    "#4BC0C0",
+    "#FF9F40",
+    "#9966FF",
+    "#FFCD56",
+    "#C7C9CD",
+  ];
 
   function addDataset() {
     let settingsDatasetsCopy = Object.assign([], settingsDatasets);
@@ -27,8 +36,18 @@ function Settings(props) {
     );
     setSettingsDatasets(settingsDatasetsCopy);
 
+    let randomIndex = Math.round(Math.random()* 7);
+    function randomColor() {
+      return colors[randomIndex]
+    }
+
     let valuesCopy = Object.assign([], props.datasets);
-    valuesCopy.push({ id: settingsDatasets.length, label: "", data: [] });
+    valuesCopy.push({
+      id: settingsDatasets.length,
+      label: "",
+      data: [],
+      backgroundColor: randomColor,
+    });
     props.setDatasets(valuesCopy);
   }
   return (
