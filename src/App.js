@@ -14,7 +14,7 @@ export const ValuesState = createContext("without provider");
 
 function App() {
   const [theme, setTheme] = useState(true);
-  const [labels, setLabels] = useState(["label1", "label2", "label3"]);
+  const [labels, setLabels] = useState(["Значение 1", "Значение 2"]);
   const [datasets, setDatasets] = useState([]);
 
   const data = {

@@ -36,9 +36,9 @@ function Settings(props) {
     );
     setSettingsDatasets(settingsDatasetsCopy);
 
-    let randomIndex = Math.round(Math.random()* 7);
+    let randomIndex = Math.round(Math.random() * 6);
     function randomColor() {
-      return colors[randomIndex]
+      return colors[randomIndex];
     }
 
     let valuesCopy = Object.assign([], props.datasets);
