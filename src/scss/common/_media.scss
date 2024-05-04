@@ -1,11 +1,78 @@
+@media (max-width: 1310px) {
+  %chart-settings {
+    .settings-close-button {
+      left: 85%;
+    }
+  }
+}
+
+@media (max-width: 955px) {
+  %chart-settings {
+    .settings-close-button {
+      left: 80%;
+    }
+  }
+}
+
 @media (max-width: 720px) {
-  .content {
-    width: 600px;
+  .content-dark,
+  .content-light {
+    padding: 0;
+    box-shadow: none;
+    width: 500px;
     .choose-chart-type {
       position: absolute;
-      font-size: 12px;
-      margin-top: 8px;
-      top: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      top: 100%;
+      width: 470px;
+    }
+  }
+  .content-light {
+    .choose-chart-type {
+      input + label {
+        color: black;
+      }
+    }
+  }
+  %chart-settings {
+    .settings-close-button {
+      left: 75%;
+    }
+  }
+}
+
+@media (max-width: 585px) {
+  %chart-settings {
+    .settings-close-button {
+      left: 70%;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .content-dark,
+  .content-light {
+    width: 300px;
+    .choose-chart-type {
+      font-size: 14px;
+      width: 270px;
+    }
+  }
+}
+
+@media (max-width: 485px) {
+  %chart-settings {
+    .settings-close-button {
+      left: 60%;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  %chart-settings {
+    .settings-close-button {
+      left: 50%;
     }
   }
 }

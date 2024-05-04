@@ -1,0 +1,30 @@
+.columns-inputs,
+.values-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  input {
+    background-color: white;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    padding: 7px 5px;
+    outline: none;
+    transition: 0.3s ease transform, 0.3s ease box-shadow;
+  }
+  input:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.2);
+  }
+  input::placeholder {
+    text-align: center;
+    transition: 0.3s ease transform;
+  }
+  input:focus::placeholder {
+    transform: translateY(-200%);
+  }
+}

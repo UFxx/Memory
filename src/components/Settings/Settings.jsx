@@ -36,9 +36,9 @@ function Settings(props) {
     );
     setSettingsDatasets(settingsDatasetsCopy);
 
-    let randomIndex = Math.round(Math.random()* 7);
+    let randomIndex = Math.round(Math.random() * 6);
     function randomColor() {
-      return colors[randomIndex]
+      return colors[randomIndex];
     }
 
     let valuesCopy = Object.assign([], props.datasets);
@@ -52,22 +52,22 @@ function Settings(props) {
   }
   return (
     <div className={`chart-settings__${props.open ? "open" : "hidden"}`}>
+      {props.theme ? (
+        <img
+          src={CloseSettingsIconDark}
+          alt="close settings icon"
+          className="settings-close-button"
+          onClick={props.changeSettingsOpen}
+        />
+      ) : (
+        <img
+          src={CloseSettingsIconLight}
+          alt="close settings icon"
+          className="settings-close-button"
+          onClick={props.changeSettingsOpen}
+        />
+      )}
       <div className="settings-content">
-        {props.theme ? (
-          <img
-            src={CloseSettingsIconDark}
-            alt="close settings icon"
-            className="settings-close-button"
-            onClick={props.changeSettingsOpen}
-          />
-        ) : (
-          <img
-            src={CloseSettingsIconLight}
-            alt="close settings icon"
-            className="settings-close-button"
-            onClick={props.changeSettingsOpen}
-          />
-        )}
         <div className="datasets">
           <DatasetsState.Provider value={settingsDatasets}>
             {settingsDatasets}

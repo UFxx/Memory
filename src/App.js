@@ -14,7 +14,7 @@ export const ValuesState = createContext("without provider");
 
 function App() {
   const [theme, setTheme] = useState(true);
-  const [labels, setLabels] = useState(["label1", "label2", "label3"]);
+  const [labels, setLabels] = useState(["Значение 1", "Значение 2"]);
   const [datasets, setDatasets] = useState([]);
 
   const data = {
@@ -39,14 +39,6 @@ function App() {
     <>
       <div className={`container-${theme ? "dark" : "light"}`}>
         <ThemeChanger setTheme={setTheme} theme={theme} />
-        <div className={`content-${theme ? "dark" : "light"}`}>
-          <div className={`chart-container-${theme ? "dark" : "light"}`}>
-            {/* ValueState - which radio button is clicked */}
-            <Theme.Provider value={theme}>
-              <Charts radioValue={radioValue} data={data} datasets={datasets} />
-            </Theme.Provider>
-          </div>
-
           {theme ? (
             <img
               src={OpenSettingsIconDark}
@@ -62,6 +54,14 @@ function App() {
               onClick={changeSettingsOpen}
             />
           )}
+        <div className={`content-${theme ? "dark" : "light"}`}>
+          <div className={`chart-container-${theme ? "dark" : "light"}`}>
+            {/* ValueState - which radio button is clicked */}
+            <Theme.Provider value={theme}>
+              <Charts radioValue={radioValue} data={data} datasets={datasets} />
+            </Theme.Provider>
+          </div>
+
           <Donwload theme={theme} />
           <div className="choose-chart-type">
             <Buttons

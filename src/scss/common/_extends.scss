@@ -7,6 +7,20 @@
   height: 100svh;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.3s ease opacity, 0.3s ease transform;
+
+  .settings-close-button {
+    position: absolute;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    left: 89%;
+    top: 29px;
+    transition: 0.3s ease transform;
+  }
+
+  .settings-close-button:hover {
+    transform: rotate(90deg);
+  }
 }
 
 %theme-switcher {
