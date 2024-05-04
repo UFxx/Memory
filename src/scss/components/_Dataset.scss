@@ -1,0 +1,63 @@
+.settings-content {
+  position: relative;
+  padding: 50px;
+  .dataset-content {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px 0;
+    .dataset-title {
+      position: absolute;
+      top: -40px;
+      color: white;
+      background-color: transparent;
+      font-size: 24px;
+      border: none;
+      text-align: center;
+      outline: none;
+    }
+    .dataset-title::placeholder {
+      color: white;
+    }
+    .delete-dataset-icon {
+      position: absolute;
+      width: 20px;
+      left: 96%;
+      top: -45px;
+      padding: 10px;
+      box-sizing: content-box;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease background-color;
+    }
+    .delete-dataset-icon:hover {
+      background-color: #aaaaaa20;
+    }
+  }
+}
+
+.add-dataset-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  margin-top: 20px;
+  color: white;
+  background-color: #aaaaaa50;
+  padding: 0 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: 0.3s ease color, 0.3s ease box-shadow;
+}
+
+.add-dataset-button:hover {
+  color: rgb(182, 182, 182);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.249);
+}

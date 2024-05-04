@@ -10,11 +10,7 @@ function Buttons(props) {
         name="pie"
         value="1"
       />
-      <RadioButton
-        changeRadioValue={props.changeRadioValue}
-        valueState={props.valueState}
-        name="bar"
-        value="2"
+      <RadioButton changeRadioValue={props.changeRadioValue} valueState={props.valueState} name="bar" value="2"
       />
       <RadioButton
         changeRadioValue={props.changeRadioValue}

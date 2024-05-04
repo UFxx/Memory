@@ -39,14 +39,6 @@ function App() {
     <>
       <div className={`container-${theme ? "dark" : "light"}`}>
         <ThemeChanger setTheme={setTheme} theme={theme} />
-        <div className={`content-${theme ? "dark" : "light"}`}>
-          <div className={`chart-container-${theme ? "dark" : "light"}`}>
-            {/* ValueState - which radio button is clicked */}
-            <Theme.Provider value={theme}>
-              <Charts radioValue={radioValue} data={data} datasets={datasets} />
-            </Theme.Provider>
-          </div>
-
           {theme ? (
             <img
               src={OpenSettingsIconDark}
@@ -62,6 +54,14 @@ function App() {
               onClick={changeSettingsOpen}
             />
           )}
+        <div className={`content-${theme ? "dark" : "light"}`}>
+          <div className={`chart-container-${theme ? "dark" : "light"}`}>
+            {/* ValueState - which radio button is clicked */}
+            <Theme.Provider value={theme}>
+              <Charts radioValue={radioValue} data={data} datasets={datasets} />
+            </Theme.Provider>
+          </div>
+
           <Donwload theme={theme} />
           <div className="choose-chart-type">
             <Buttons
