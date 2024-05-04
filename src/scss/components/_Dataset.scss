@@ -1,6 +1,10 @@
 .settings-content {
   position: relative;
   padding: 50px;
+  .datasets {
+    height: 400px;
+    overflow: auto;
+  }
   .dataset-content {
     position: relative;
     margin-top: 50px;
