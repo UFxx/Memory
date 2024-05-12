@@ -14,12 +14,12 @@ export const ValuesState = createContext("without provider");
 
 function App() {
   const [theme, setTheme] = useState(true);
-  const [labels, setLabels] = useState(["Значение 1", "Значение 2"]);
+  const [labels, setLabels] = useState([]);
   const [datasets, setDatasets] = useState([]);
 
   const data = {
     labels: labels.filter(function (item, pos) {
-      return labels.indexOf(item) === pos;
+      return labels.indexOf(item) === pos && item !== "";
     }),
     datasets: datasets,
   };
@@ -39,21 +39,21 @@ function App() {
     <>
       <div className={`container-${theme ? "dark" : "light"}`}>
         <ThemeChanger setTheme={setTheme} theme={theme} />
-          {theme ? (
-            <img
-              src={OpenSettingsIconDark}
-              alt="open settings icon"
-              className="settings-open-button"
-              onClick={changeSettingsOpen}
-            />
-          ) : (
-            <img
-              src={OpenSettingsIconLight}
-              alt="open settings icon"
-              className="settings-open-button"
-              onClick={changeSettingsOpen}
-            />
-          )}
+        {theme ? (
+          <img
+            src={OpenSettingsIconDark}
+            alt="open settings icon"
+            className="settings-open-button"
+            onClick={changeSettingsOpen}
+          />
+        ) : (
+          <img
+            src={OpenSettingsIconLight}
+            alt="open settings icon"
+            className="settings-open-button"
+            onClick={changeSettingsOpen}
+          />
+        )}
         <div className={`content-${theme ? "dark" : "light"}`}>
           <div className={`chart-container-${theme ? "dark" : "light"}`}>
             {/* ValueState - which radio button is clicked */}
